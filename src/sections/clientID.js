@@ -5,7 +5,7 @@ class clientID extends Component {
     render() {
         return (
             <div className='clientID'>
-
+                <p>Cliente ID</p>
             </div>
         )
     }

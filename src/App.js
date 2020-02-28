@@ -1,28 +1,16 @@
 import React, { Component } from 'react';
-import ClientID from './sections/clientID';
-import Menu from './sections/menu';
-import Total from './sections/total';
-import OrderStats from './sections/orderStats';
+import Waitress from './templates/waitress'
 import './App.css'
 
 class App extends Component {
   render () {
     return (
-      <div className='app'>
-        <div className='takingOrder'>
-          <ClientID />
-          <div className='menuDiv'>
-            <Menu />
-            <Total />
-          </div>
-        </div>
-        <div className='orderStatus'>
-          <OrderStats />
-        </div>
+      <div>
+        <Waitress/>
       </div>
     )
   }
+  }
 
-}
 
 export default App;
