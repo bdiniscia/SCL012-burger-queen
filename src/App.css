@@ -1,7 +1,8 @@
 /* El div de la app total */
 .app {
-  width: 1024px;
+  width: 100%;
   display: flex;
+
 }
 
 /* Div total izquierdo */
@@ -9,14 +10,21 @@
   width: 70%;
   background-color: yellow;
   height: 768px;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Div del nombre y mesa */
 .clientID {
-  width: 40em;
+  width: 90%;
   height: 7em;
   background-color: blue;
   margin: 1em;
+  display: flex;
+}
+
+.menuDiv {
+  display: flex;
 }
 
 /* Div del menú  */
@@ -25,7 +33,7 @@
   height: 35em;
   background-color: blueviolet;
   margin: 1em;
-  display: inline-block;
+  display: flex;
 }
 
 /* Div del total de la cuenta */
@@ -34,7 +42,7 @@
   height: 35em;
   background-color: goldenrod;
   margin: 1em;
-  display: inline-block;
+  display: flex;
 }
 
 /* Div total derecho */

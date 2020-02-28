@@ -11,8 +11,10 @@ class App extends Component {
       <div className='app'>
         <div className='takingOrder'>
           <ClientID />
-          <Menu />
-          <Total />
+          <div className='menuDiv'>
+            <Menu />
+            <Total />
+          </div>
         </div>
         <div className='orderStatus'>
           <OrderStats />
