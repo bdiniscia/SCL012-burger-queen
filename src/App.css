@@ -1,38 +1,64 @@
-.App {
-  text-align: center;
+/* El div de la app total */
+.app {
+  width: 100%;
+  display: flex;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Div total izquierdo */
+.takingOrder {
+  width: 70%;
+  background-color: yellow;
+  height: 768px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+/* Div del nombre y mesa */
+.clientID {
+  width: 90%;
+  height: 7em;
+  background-color: blue;
+  margin: 1em;
+  display: flex;
+}
+
+.menuDiv {
+  display: flex;
+}
+
+/* Div del menú  */
+.menu {
+  width: 20em;
+  height: 35em;
+  background-color: blueviolet;
+  margin: 1em;
+  display: flex;
+}
+
+/* Div del total de la cuenta */
+.total {
+  width: 20em;
+  height: 35em;
+  background-color: goldenrod;
+  margin: 1em;
+  display: flex;
+}
+
+/* Div total derecho */
+.orderStatus {
+  width: 30%;
+  height: 768px;
+  background-color: hotpink;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.orderStats {
+  width: 300px;
+  height: 720px;
+  background-color: lawngreen;
+  margin-top: 1em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
+

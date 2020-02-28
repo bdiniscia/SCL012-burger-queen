@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import ClientID from './sections/clientID';
+import Menu from './sections/menu';
+import Total from './sections/total';
+import OrderStats from './sections/orderStats';
+import './App.css'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          COMMIT DE PRUEBA
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render () {
+    return (
+      <div className='app'>
+        <div className='takingOrder'>
+          <ClientID />
+          <div className='menuDiv'>
+            <Menu />
+            <Total />
+          </div>
+        </div>
+        <div className='orderStatus'>
+          <OrderStats />
+        </div>
+      </div>
+    )
+  }
+
 }
 
 export default App;
