@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import '../App.css'
 
-import ClientID from "../sections/clientID";
-import Menu from "../sections/menu";
-import Total from "../sections/total";
-import OrderStats from "../sections/orderStats";
+import ClientID from "../sections/waitress/clientID";
+import Menu from "../sections/waitress/menu";
+import Total from "../sections/waitress/total";
+import OrderStats from "../sections/waitress/orderStats";
 
 
 class Waitress extends Component {
