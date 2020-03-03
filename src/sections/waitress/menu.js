@@ -18,7 +18,7 @@ class Menu extends Component {
                 />
                 <Button
                 onClick={this.handleClick}
-                title = 'Almuerzo/Cena'
+                title = 'Almuerzo/Cenagi'
                 />
 
             </div>
