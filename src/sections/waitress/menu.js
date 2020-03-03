@@ -20,7 +20,6 @@ class Menu extends Component {
                 onClick={this.handleClick}
                 title = 'Almuerzo/Cena'
                 />
-
             </div>
         )
     }
