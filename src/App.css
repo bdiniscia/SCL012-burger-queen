@@ -1,4 +1,8 @@
 /* El div de la app total */
+* {
+  list-style: none;
+}
+
 .app {
   width: 100%;
   display: flex;
