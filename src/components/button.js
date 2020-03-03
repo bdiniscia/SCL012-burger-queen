@@ -6,7 +6,7 @@ const Button = ({title, onClick}) => {
     return (
         <button 
             className = 'button'
-            onClick = {(e) => onClick(e)}>
+            onClick = {onClick}>
             {title}
         </button>
     )
@@ -14,7 +14,7 @@ const Button = ({title, onClick}) => {
 
 Button.propTypes = {
     title: PropTypes.string.isRequired,
-    onClick: PropTypes.func.isRequired
+    onClick: PropTypes.func
 }
 
 export default Button;
