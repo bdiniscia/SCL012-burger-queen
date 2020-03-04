@@ -4,7 +4,7 @@ class cook extends Component {
 	render() {
 		return (
 			<div>
-				
+				<h1>TEMPLATE DE LA COCINA</h1>
 			</div>
 		);
 	}
