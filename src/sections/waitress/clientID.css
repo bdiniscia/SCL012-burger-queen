@@ -1,0 +1,27 @@
+.client{
+	display: flex;
+	
+}
+.button-back{
+	display: flex;
+	align-items: flex-start;
+	padding-top: 2px;
+
+}
+
+.titleClient{
+	margin-left: 1rem;
+	margin-top: 10px;
+	
+}
+.inputClient{
+	margin-top: 7px;
+    margin-left: 8px;
+	height: 27px;
+	width: 145px;
+	font-family: 'Roboto';
+	border-radius: 5px;
+	border-color: mediumturquoise;
+	border-style: solid;
+	
+}
