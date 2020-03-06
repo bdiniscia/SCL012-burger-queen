@@ -41,10 +41,8 @@ class clientID extends Component {
 
                 </div>
                
-
                 </div>
                
-
             </div>
         )
     }
