@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 import './clientID.css'
 import backButton from '../../imagenes/backButton.png'
-import {Dropdown, ButtonToolbar, DropdownButton } from 'react-bootstrap';
+
 
 class clientID extends Component {
 
@@ -15,7 +15,6 @@ class clientID extends Component {
     render() {
         return (
             <div className='clientID'>
-
                 <div className='client'>
 
                 <div className='button-back'>
