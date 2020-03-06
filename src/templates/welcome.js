@@ -10,22 +10,25 @@ class welcome extends Component {
       <Fragment>
         <div className="container-custom">
           <div className="logo">
-            <img alt="logo" src={logo} />
-
+			<img 
+			alt="logo" 
+			src={logo} />
+			
             <h1 className="title-custom">¿Cuál es tu rol?</h1>
 
             <div>
-              <div className="button-welcome">
-                <Link to="/waitress">
-                  <Button title="Mesonero" />
-                </Link>
-              </div>
-              <div className="button-welcome">
-                <Link to="/cook">
-                  <Button title="Cocinero" />
-                </Link>
-              </div>
+              <div className='button-welcome'>
+			  <Link to="/waitress">
+                <Button  title="Mesonero" />
+              </Link>
+			  </div>
+			  <div className='button-welcome'>
+              <Link to="/cook">
+                <Button  title="Cocinero" />
+              </Link>
+			  </div>
             </div>
+
           </div>
         </div>
       </Fragment>
