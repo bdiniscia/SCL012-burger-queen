@@ -8,6 +8,8 @@ import OrderStats from "../sections/waitress/orderStats";
 
 
 class Waitress extends Component {
+
+
   render() {
     return (
       <div>
