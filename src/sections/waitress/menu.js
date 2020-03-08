@@ -2,44 +2,37 @@ import React, { Component } from 'react';
 import '../../App.css';
 import './menu.css'
 import Button from '../../components/button'
-import {breakfast, dinner} from '../../data.json';
+import meals from '../../data.json';
 
-
-class MenuBreakfast extends Component {
+class MenuList extends Component {
   render() {
+    const meals = this.props.meals.map((meal) => {
+      return (
+        <div key={meal.id} className='itemsMenu'>
+          <p className='itemName'>{meal.name}</p>
+          <p className='itemPrice'>${meal.price}</p>
+        </div>
+      );
+    });
+
     return (
       <div className='itemDiv'>
-        {breakfast.map(element => {
-        return(
-          <div key={element.id} className='itemsMenu'>
-            <p className='itemName'>{element.name}</p>
-            <p className='itemPrice'>${element.price}</p>
-          </div>)})}
+        { meals }
       </div>
-      );
+    );
   }
 }
-
-class MenuDinner extends Component {
-  render() {
-    return (
-      <div className='itemDiv'>
-        {dinner.map(element => {
-        return(
-          <div key={element.id} className='itemsMenu'>
-            <p className='itemName'>{element.name}</p>
-            <p className='itemPrice'>${element.price}</p>
-          </div>)})}
-      </div>
-      );
-  }
-}
-
 
 class Menu extends Component {
   state = {
     visibleBreakfast: false,
     visibleDinner: false
+  }
+
+  getMealsByType(type) {
+    return meals.filter((meal) => {
+      return meal.type === type;
+    });
   }
 
   render () {
@@ -55,19 +48,17 @@ class Menu extends Component {
         visibleBreakfast: false})
     }
 
-
     return (
       <div className='menu'>
         <div className='divButtons'>
           <Button title='Desayuno' onClick={_renderBreakfast}/>
           <Button title='Almuerzo/Cena' onClick={_renderDinner}/>
         </div>
-        {this.state.visibleBreakfast ? <MenuBreakfast /> : null}
-        {this.state.visibleDinner ? <MenuDinner /> : null}
+        {this.state.visibleBreakfast ? <MenuList meals={this.getMealsByType('breakfast')}/> : null}
+        {this.state.visibleDinner ? <MenuList meals={this.getMealsByType('dinner')}/> : null}
       </div>
     )
   }
-
 }
 
 export default Menu;
