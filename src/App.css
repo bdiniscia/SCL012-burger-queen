@@ -39,7 +39,7 @@
   background-color: blueviolet;
   margin: 1em;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* Div del total de la cuenta */
