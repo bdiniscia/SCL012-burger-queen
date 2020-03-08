@@ -42,6 +42,7 @@ class MenuList extends Component {
   }
 }
 
+
 // Componente principal de menú
 class Menu extends Component {
   // Flags para mostrar o ocultar los menús
