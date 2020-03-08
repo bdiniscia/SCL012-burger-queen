@@ -36,7 +36,6 @@
 .menu {
   width: 20em;
   height: 35em;
-  background-color: blueviolet;
   margin: 1em;
   display: flex;
   flex-direction: column;
@@ -65,6 +64,10 @@
   height: 720px;
   background-color: lawngreen;
   margin-top: 1em;
+}
+
+p {
+  margin-bottom: 0.75em;
 }
 
 
