@@ -11,9 +11,7 @@ class welcome extends Component {
         <div className="container-custom">
           <div className="logo">
             <img alt="logo" src={logo} />
-
             <h1 className="title-custom">¿Cuál es tu rol?</h1>
-
             <div>
               <div className="button-welcome">
                 <Link to="/waitress">
