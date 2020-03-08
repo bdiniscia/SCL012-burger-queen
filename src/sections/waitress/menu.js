@@ -53,7 +53,6 @@ class Menu extends Component {
       this.setState({
         visibleDinner: !this.state.visibleDinner, 
         visibleBreakfast: false})
-
     }
 
 
