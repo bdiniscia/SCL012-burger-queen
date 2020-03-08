@@ -36,10 +36,9 @@
 .menu {
   width: 20em;
   height: 35em;
-  background-color: blueviolet;
   margin: 1em;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
 /* Div del total de la cuenta */
@@ -65,6 +64,10 @@
   height: 720px;
   background-color: lawngreen;
   margin-top: 1em;
+}
+
+p {
+  margin-bottom: 0.75em;
 }
 
 

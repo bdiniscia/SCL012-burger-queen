@@ -1,74 +1,73 @@
 import React, { Component } from 'react';
 import '../../App.css';
+import './menu.css'
 import Button from '../../components/button'
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import {breakfast, dinner} from '../../data.json';
+
+
+class MenuBreakfast extends Component {
+  render() {
+    return (
+      <div className='itemDiv'>
+        {breakfast.map(element => {
+        return(
+          <div key={element.id} className='itemsMenu'>
+            <p className='itemName'>{element.name}</p>
+            <p className='itemPrice'>${element.price}</p>
+          </div>)})}
+      </div>
+      );
+  }
+}
+
+class MenuDinner extends Component {
+  render() {
+    return (
+      <div className='itemDiv'>
+        {dinner.map(element => {
+        return(
+          <div key={element.id} className='itemsMenu'>
+            <p className='itemName'>{element.name}</p>
+            <p className='itemPrice'>${element.price}</p>
+          </div>)})}
+      </div>
+      );
+  }
+}
+
 
 class Menu extends Component {
+  state = {
+    visibleBreakfast: false,
+    visibleDinner: false
+  }
 
-    handleClick = (e) => {
-        e.preventDefault()
-        alert('Clicked')
+  render () {
+    const _renderBreakfast = () => {
+      this.setState({
+        visibleBreakfast: !this.state.visibleBreakfast, 
+        visibleDinner: false})
     }
 
-    render() {
-        return (
-            <div className='menu'>
-                <Router>
-                <div>
-                        <Link to="/breakfast">
-                            <Button title = 'Desayuno'/>
-                        </Link>
-                        <Link to="/dinner">
-                            <Button title = 'Almuerzo/Cena'/>
-                        </Link>
+    const _renderDinner = () => {
+      this.setState({
+        visibleDinner: !this.state.visibleDinner, 
+        visibleBreakfast: false})
+    }
 
-                    <Switch>
-                    <Route exact path="/">
-                        <Home />
-                    </Route>
-                    <Route path="/breakfast">
-                        <Breakfast />
-                    </Route>
-                    <Route path="/dinner">
-                        <Dinner />
-                    </Route>
-                    </Switch>
-                </div>
-                </Router>
+
+    return (
+      <div className='menu'>
+        <div className='divButtons'>
+          <Button title='Desayuno' onClick={_renderBreakfast}/>
+          <Button title='Almuerzo/Cena' onClick={_renderDinner}/>
         </div>
-        )
-    }
+        {this.state.visibleBreakfast ? <MenuBreakfast /> : null}
+        {this.state.visibleDinner ? <MenuDinner /> : null}
+      </div>
+    )
+  }
 
-}
-
-
-function Home() {
-  return (
-    <div>
-      <h2>Elige un menú</h2>
-    </div>
-  );
-}
-
-function Breakfast() {
-  return (
-    <div>
-      <h2>Menú de Desayuno</h2>
-    </div>
-  );
-}
-
-function Dinner() {
-  return (
-    <div>
-      <h2>Menú Almuerzo/Cena</h2>
-    </div>
-  );
 }
 
 export default Menu;
