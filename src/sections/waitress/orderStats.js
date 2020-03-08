@@ -5,7 +5,7 @@ class OrderStats extends Component {
     render() {
         return (
             <div className='orderStats'>
-
+               
             </div>
         )
     }
