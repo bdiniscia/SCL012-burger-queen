@@ -40,14 +40,18 @@
           "price": 100
         }
       ],
-      "types": [
+      "options": [
         {
           "id": "t00",
-          "name": "vegan"
+          "name": "Carne"
         },
         {
           "id": "t01",
-          "name": "cow"
+          "name": "Vacuno"
+        },
+        {
+          "id": "t01",
+          "name": "Vegetariana"
         }
       ]
     },
@@ -55,7 +59,33 @@
       "id": "d02",
       "name": "Hamburguesa doble",
       "price": 1500,
-      "type": "dinner"
+      "type": "dinner",
+      "extras": [
+        {
+          "id": "e00",
+          "name": "egg",
+          "price": 100
+        }, 
+        {
+          "id": "e01",
+          "name": "bacon",
+          "price": 100
+        }
+      ],
+      "options": [
+        {
+          "id": "t00",
+          "name": "Carne"
+        },
+        {
+          "id": "t01",
+          "name": "Vacuno"
+        },
+        {
+          "id": "t01",
+          "name": "Vegetariana"
+        }
+      ]
     },
     {
       "id": "d03",
