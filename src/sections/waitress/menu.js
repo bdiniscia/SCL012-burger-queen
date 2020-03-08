@@ -3,6 +3,7 @@ import '../../App.css';
 import './menu.css'
 import Button from '../../components/button'
 import meals from '../../data.json';
+import Modal from 'react-bootstrap/Modal'
 
 
 // Componente que muestra el menú dependiendo si es breakfast o dinner
