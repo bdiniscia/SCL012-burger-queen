@@ -8,12 +8,12 @@ import {breakfast, dinner} from '../../data.json';
 class MenuBreakfast extends Component {
   render() {
     return (
-      <div>
+      <div className='itemDiv'>
         {breakfast.map(element => {
         return(
           <div key={element.id} className='itemsMenu'>
-            <p>{element.name}</p>
-            <p>${element.price}</p>
+            <p className='itemName'>{element.name}</p>
+            <p className='itemPrice'>${element.price}</p>
           </div>)})}
       </div>
       );
@@ -23,12 +23,12 @@ class MenuBreakfast extends Component {
 class MenuDinner extends Component {
   render() {
     return (
-      <div>
+      <div className='itemDiv'>
         {dinner.map(element => {
         return(
           <div key={element.id} className='itemsMenu'>
-            <p>{element.name}</p>
-            <p>${element.price}</p>
+            <p className='itemName'>{element.name}</p>
+            <p className='itemPrice'>${element.price}</p>
           </div>)})}
       </div>
       );
