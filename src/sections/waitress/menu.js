@@ -7,6 +7,7 @@ import Modal from "react-bootstrap/Modal";
 
 // Componente que muestra el menú dependiendo si es breakfast o dinner
 class MenuList extends Component {
+
   // Clicks en los items del menú
   handleClick = (e, meal) => {
     e.preventDefault();
