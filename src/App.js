@@ -5,6 +5,7 @@ import Cook from './templates/cook';
 import Waitress from "./templates/waitress";
 import Modal from './components/modal'
 
+
 import "./App.css";
 import {
   BrowserRouter as Router,
