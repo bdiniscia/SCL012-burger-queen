@@ -115,7 +115,6 @@ class Menu extends Component {
     visibleDinner: false,
   };
 
-  
 
   // Filtra los elemntos de la data de acuerdo al prop que se le pase (breakfast o dinner)
   // y te deja la data filtrada para manipularla en MenuList
@@ -156,8 +155,6 @@ class Menu extends Component {
             meals={this.getMealsByType("dinner")}
           />
         ) : null}
-
-        
       </div>
     );
   }

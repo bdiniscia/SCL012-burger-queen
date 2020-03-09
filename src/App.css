@@ -30,11 +30,12 @@
 
 .menuDiv {
   display: flex;
+  justify-content: space-between;
 }
 
 /* Div del menú  */
 .menu {
-  width: 20em;
+  width: 45%;
   height: 35em;
   margin: 1em;
   display: flex;
@@ -43,7 +44,7 @@
 
 /* Div del total de la cuenta */
 .total {
-  width: 20em;
+  width: 45%;
   height: 35em;
   background-color: goldenrod;
   margin: 1em;
