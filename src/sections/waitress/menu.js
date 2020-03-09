@@ -12,8 +12,9 @@ class MenuList extends Component {
     e.preventDefault();
     console.log(`> meal:`, meal);
     // Si no tiene opciones para personalizar el producto
-    // if (typeof meal.options === "undefined") {
-      // 
+    if (typeof meal.options === "undefined") {
+      return alert('No tiene opciones')}
+      
       if(meal.id === 'd01'){
       this.props.showModal('simple')
     } else if(meal.id === 'd02'){
