@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import Welcome from './templates/welcome';
 import Cook from './templates/cook';
 import Waitress from "./templates/waitress";
+import Modal from './components/modal'
 
 import "./App.css";
 import {
@@ -25,6 +26,7 @@ class App extends Component {
             </Route>
             <Route path="/Cook">
               <Cook />
+              
             </Route>
           </Switch>
       </Router>
