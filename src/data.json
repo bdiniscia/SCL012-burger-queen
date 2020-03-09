@@ -31,23 +31,23 @@
       "extras": [
         {
           "id": "e00",
-          "name": "egg",
+          "name": "Huevo",
           "price": 100
         }, 
         {
           "id": "e01",
-          "name": "bacon",
+          "name": "Queso",
           "price": 100
         }
       ],
       "options": [
         {
           "id": "t00",
-          "name": "Carne"
+          "name": "Pollo"
         },
         {
           "id": "t01",
-          "name": "Vacuno"
+          "name": "Carne"
         },
         {
           "id": "t01",
@@ -63,23 +63,23 @@
       "extras": [
         {
           "id": "e00",
-          "name": "egg",
+          "name": "Huevo",
           "price": 100
         }, 
         {
           "id": "e01",
-          "name": "bacon",
+          "name": "Queso",
           "price": 100
         }
       ],
       "options": [
         {
           "id": "t00",
-          "name": "Carne"
+          "name": "Pollo"
         },
         {
           "id": "t01",
-          "name": "Vacuno"
+          "name": "Carne"
         },
         {
           "id": "t01",
