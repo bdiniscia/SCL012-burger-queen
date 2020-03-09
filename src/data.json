@@ -1,66 +1,126 @@
-{
-    "breakfast": [
-      {
-        "id": "b01",
-        "name": "Café Americano",
-        "price": 500
-      },
-      {
-        "id": "b02",
-        "name": "Café con leche",
-        "price": 700
-      },
-      {
-        "id": "b03",
-        "name": "Sandwich jamón y queso",
-        "price": 1000
-      },
-      {
-        "id": "b04",
-        "name": "Jugo de frutas natural",
-        "price": 700
-      }
-    ],
-    "dinner": [
+[
+    {
+      "id": "b01",
+      "name": "Café Americano",
+      "price": 500,
+      "type": "breakfast"
+    },
+    {
+      "id": "b02",
+      "name": "Café con leche",
+      "price": 700,
+      "type": "breakfast"
+    },
+    {
+      "id": "b03",
+      "name": "Sandwich jamón y queso",
+      "price": 1000,
+      "type": "breakfast"
+    },
+    {
+      "id": "b04",
+      "name": "Jugo de frutas natural",
+      "price": 700,
+      "type": "breakfast"
+    },
+    {
+      "id": "d01",
+      "name": "Hamburguesa simple",
+      "price": 1000,
+      "type": "dinner",
+      "extras": [
         {
-            "id": "d01",
-            "name": "Hamburguesa simple",
-            "price": 1000
-        },
+          "id": "e00",
+          "name": "egg",
+          "price": 100
+        }, 
         {
-            "id": "d02",
-            "name": "Hamburguesa doble",
-            "price": 1500
-        },
-        {
-            "id": "d03",
-            "name": "Papas fritas",
-            "price": 500
-        },
-        {
-            "id": "d04",
-            "name": "Aros de cebolla",
-            "price": 500
-        },
-        {
-            "id": "d05",
-            "name": "Agua 500ml",
-            "price": 500
-        },
-        {
-            "id": "d06",
-            "name": "Agua 750ml",
-            "price": 700
-        },
-        {
-            "id": "d07",
-            "name": "Bebida/gaseosa 500ml",
-            "price": 700
-        },
-        {
-            "id": "d08",
-            "name": "Bebida/gaseosa 750ml",
-            "price": 1000
+          "id": "e01",
+          "name": "bacon",
+          "price": 100
         }
-    ]
-  }
+      ],
+      "options": [
+        {
+          "id": "t00",
+          "name": "Carne"
+        },
+        {
+          "id": "t01",
+          "name": "Vacuno"
+        },
+        {
+          "id": "t01",
+          "name": "Vegetariana"
+        }
+      ]
+    },
+    {
+      "id": "d02",
+      "name": "Hamburguesa doble",
+      "price": 1500,
+      "type": "dinner",
+      "extras": [
+        {
+          "id": "e00",
+          "name": "egg",
+          "price": 100
+        }, 
+        {
+          "id": "e01",
+          "name": "bacon",
+          "price": 100
+        }
+      ],
+      "options": [
+        {
+          "id": "t00",
+          "name": "Carne"
+        },
+        {
+          "id": "t01",
+          "name": "Vacuno"
+        },
+        {
+          "id": "t01",
+          "name": "Vegetariana"
+        }
+      ]
+    },
+    {
+      "id": "d03",
+      "name": "Papas fritas",
+      "price": 500,
+      "type": "dinner"
+    },
+    {
+      "id": "d04",
+      "name": "Aros de cebolla",
+      "price": 500,
+      "type": "dinner"
+    },
+    {
+      "id": "d05",
+      "name": "Agua 500ml",
+      "price": 500,
+      "type": "dinner"
+    },
+    {
+      "id": "d06",
+      "name": "Agua 750ml",
+      "price": 700,
+      "type": "dinner"
+    },
+    {
+      "id": "d07",
+      "name": "Bebida/gaseosa 500ml",
+      "price": 700,
+      "type": "dinner"
+    },
+    {
+      "id": "d08",
+      "name": "Bebida/gaseosa 750ml",
+      "price": 1000,
+      "type": "dinner"
+    }
+  ]
