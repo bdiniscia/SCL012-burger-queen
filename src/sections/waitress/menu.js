@@ -21,6 +21,7 @@ class MenuList extends Component {
     } else if(meal.id === 'd02'){
       this.props.showModal('doble')
     }
+   this.setState(command)
   };
 
   render() {
@@ -51,8 +52,10 @@ class Menu extends Component {
     visibleBreakfast: false,
     visibleDinner: false,
     showModal: false,
-    burgerType: ''
+    burgerType: '', 
+    command: []
   };
+  
 
   showModal = (type) => {
     this.setState({
