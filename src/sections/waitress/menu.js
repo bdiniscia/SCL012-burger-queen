@@ -47,7 +47,6 @@ class MenuList extends Component {
       currentMeal : meal,
       showModal: true
     })
-    this.getModal(meal);
   };
 
   // Modal de las hamburguesas
@@ -86,7 +85,7 @@ class MenuList extends Component {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button title="Agregar" onClick={() => this.addItem()} />
+        <Button title="Agregar" onClick={()=>this.addItem()} />
       </Modal.Footer>
     </Modal>
     );
@@ -97,11 +96,7 @@ class MenuList extends Component {
     const meals = this.props.meals.map(meal => {
       return (
         <div>
-        <div
-          key={meal.id}
-          className="itemsMenu"
-          onClick={e => this.handleClick(e, meal)}
-        >
+        <div key={meal.id} className="itemsMenu" onClick={e => this.handleClick(e, meal)}>
           <p className="itemName">{meal.name}</p>
           <p className="itemPrice">${meal.price}</p>
         </div>

@@ -5,6 +5,7 @@ import ClientID from "../sections/waitress/clientID";
 import Menu from "../sections/waitress/menu";
 import Total from "../sections/waitress/total";
 import OrderStats from "../sections/waitress/orderStats";
+import Button from '../components/button'
 
 class Waitress extends Component {
   state = {
@@ -43,6 +44,9 @@ class Waitress extends Component {
               <Menu addOrder={this.addOrder.bind(this)} />
               <Total total={this.state.order} />
             </div>
+              <div className='buttonSendCook'>
+              <Button title='Enviar a cocina'/>
+              </div>
           </div>
           <div className="orderStatus">
             <OrderStats />

@@ -1,0 +1,26 @@
+.itemsMenuTotal{
+	display: flex;
+    justify-content: space-between;
+	padding: 1em 1.75em 1em 1.75em ;
+    
+}
+
+.itemNameTotal{
+	font-size: 20px;
+	color: white;
+}
+.itemNameTotal{
+	font-size: 18px;
+	color: white;
+}
+
+.sumTotal{
+	color: white;
+	font-size: 18px;
+	display: flex;
+	justify-content: space-between;
+	padding: 1em 1.75em 1em 1.75em ;
+}
+.ptotal{
+	color: #f18f01;
+}
