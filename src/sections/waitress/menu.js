@@ -17,17 +17,11 @@ class MenuList extends Component {
     };
   }
 
-  showModal = (meal) => {
-    this.setState({
-      showModal: true,
-      meal,
-    });
-  };
 
   hideModal = () => {
     this.setState({
       showModal: false,
-      meal: null,
+      currentMeal: null,
     });
   };
 
@@ -50,9 +44,9 @@ class MenuList extends Component {
     }
     //Actualizamos estado de Modal
     this.setState ({
-      currentMeal : meal
+      currentMeal : meal,
+      showModal: true
     })
-    this.showModal(meal);
   };
 
   // Modal de las hamburguesas
@@ -114,11 +108,11 @@ class MenuList extends Component {
       );
     });
 
-    const { meal, showModal } = this.state;
+    const { currentMeal, showModal } = this.state;
     return (
-      // Se muestra la constante Meals que se declara arriba      
+      // Se muestra la constante meals que se declara arriba      
       <div>
-        { showModal && this.getModal(meal) }
+        { showModal && this.getModal(currentMeal) }
         <div className="itemDiv">{meals}</div>
       </div>
     );
