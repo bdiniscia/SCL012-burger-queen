@@ -10,8 +10,7 @@ class Total extends Component {
                         this.props.total.map(item => {
                         return (
                         <div>
-                            <ol>{item.name}</ol>
-                            <ol>{item.price}</ol>
+                            <ol>{item.name} ${item.price}</ol>
                         </div>
                         ) 
                         })
