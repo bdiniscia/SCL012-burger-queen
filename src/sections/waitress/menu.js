@@ -10,6 +10,7 @@ class MenuList extends Component {
 
   state = {
     showModal: false,
+    currentMeal: null
   }
 
   showModal = () => {
@@ -23,14 +24,28 @@ class MenuList extends Component {
       showModal: false
     });
   };
+
+  addItem(){
+    this.props.añadirItemAlPedido(this.state.currentMeal);
+    this.hideModal();
+  }
+
   // Clicks en los items del menú
   handleClick = (e, meal) => {
     e.preventDefault();
     console.log(`> meal:`, meal);
     // Si no tiene opciones para personalizar el producto
     if (typeof meal.options === "undefined") {
-      return alert("No tiene opciones");
+      // return alert("No tiene opciones");
+
+      this.props.añadirItemAlPedido(meal);
+
+      return
     }
+
+    this.setState({
+      currentMeal: meal
+    })
 
     return (
       this.showModal()
@@ -94,7 +109,7 @@ class MenuList extends Component {
             </div>
           </Modal.Body>
           <Modal.Footer>
-            <Button title="Agregar" onClick={null} />
+            <Button title="Agregar" onClick={()=>{this.addItem()}} />
           </Modal.Footer>
         </Modal>
         </div>
@@ -148,11 +163,13 @@ class Menu extends Component {
         </div>
         {this.state.visibleBreakfast ? (
           <MenuList
+            addOrder={this.props.addOrder}
             meals={this.getMealsByType("breakfast")}
           />
         ) : null}
         {this.state.visibleDinner ? (
           <MenuList
+          addOrder={this.props.addOrder}
             meals={this.getMealsByType("dinner")}
           />
         ) : null}
