@@ -8,25 +8,26 @@ import Modal from "react-bootstrap/Modal";
 // Componente que muestra el menú dependiendo si es breakfast o dinner
 class MenuList extends Component {
 
-  state = {
-    showModal: false,
-    currentMeal: null
+  constructor(props) {
+    super(props);
+
+    this.state = {      
+      showModal: false,
+      currentMeal: null
+    };
   }
 
-  showModal = () => {
-    this.setState({
-      showModal: true,
-    });
-  };
 
   hideModal = () => {
     this.setState({
-      showModal: false
+      showModal: false,
+      currentMeal: null,
     });
   };
 
+  // actualizar el estado del modal
   addItem(){
-    this.props.añadirItemAlPedido(this.state.currentMeal);
+    this.props.addOrder(this.state.currentMeal);
     this.hideModal();
   }
 
@@ -35,22 +36,60 @@ class MenuList extends Component {
     e.preventDefault();
     console.log(`> meal:`, meal);
     // Si no tiene opciones para personalizar el producto
-    if (typeof meal.options === "undefined") {
-      // return alert("No tiene opciones");
-
-      this.props.añadirItemAlPedido(meal);
+    if (typeof meal.options === "undefined" && typeof meal.extras === "undefined") {
+      //Pasamos la función que actualiza el estado de la orden y le pasamos como parametro la data 
+      this.props.addOrder(meal);
 
       return
     }
-
-    this.setState({
-      currentMeal: meal
+    //Actualizamos estado de Modal
+    this.setState ({
+      currentMeal : meal,
+      showModal: true
     })
-
-    return (
-      this.showModal()
-    )
   };
+
+  // Modal de las hamburguesas
+  getModal(meal) {
+    return (
+      <Modal key={meal.id} show={this.state.showModal} onHide={() => this.hideModal()}>
+      <Modal.Header closeButton>
+        <Modal.Title>
+          {meal.name}
+        </Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <div className="row">
+          <div className="col-6">
+            <p>Elige el tipo:<span className='asterisk'>*</span></p>
+            {meal.options.map(option => {
+              return (
+                <label className="container">
+                  <input type="radio" name="RadioOption" value={option.name} />{" "}
+                  {option.name}
+                </label>
+              )
+            })}
+          </div>
+
+          <div className="col-6">
+            <p>Elige extra:</p>
+            {meal.extras.map(extra => {
+              return (
+                <label className="container">
+                  <input type="checkbox" value={extra.name}/> {extra.name} ${extra.price}
+                </label>
+              )
+            })}
+          </div>
+        </div>
+      </Modal.Body>
+      <Modal.Footer>
+        <Button title="Agregar" onClick={null} />
+      </Modal.Footer>
+    </Modal>
+    );
+  }
 
   render() {
     // Mapea y muestra cada uno de los elementos del array escogido (Breakfast o dinner)
@@ -65,60 +104,17 @@ class MenuList extends Component {
           <p className="itemName">{meal.name}</p>
           <p className="itemPrice">${meal.price}</p>
         </div>
-        
-        <Modal key={meal.id} show={this.state.showModal} onHide={() => this.hideModal()}>
-          <Modal.Header closeButton>
-            <Modal.Title>
-              {meal.name}
-            </Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div className="row">
-              <div className="col-6">
-                <p>Elige el tipo:</p>
-                <label class="container">
-                  <input
-                    type="radio"
-                    name="RadioOptions"
-                    value="option1"
-                    checked={true}
-                  />{" "}
-                  Pollo
-                </label>
-                <label class="container">
-                  <input type="radio" name="RadioOptions" value="option2" />{" "}
-                  Carne
-                </label>
-                <label class="container">
-                  <input type="radio" name="RadioOptions" value="option3" />{" "}
-                  Vegetariana
-                </label>
-              </div>
-
-              <div className="col-6">
-                <p>Elige extra:</p>
-                <label class="container">
-                  <input type="checkbox" checked="checked" /> Queso
-                  <span class="checkmark"></span>
-                </label>
-                <label class="container">
-                  <input type="checkbox" checked="checked" /> Huevo
-                  <span class="checkmark"></span>
-                </label>
-              </div>
-            </div>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button title="Agregar" onClick={()=>{this.addItem()}} />
-          </Modal.Footer>
-        </Modal>
         </div>
       );
     });
 
+    const { currentMeal, showModal } = this.state;
     return (
-      // Se muestra la constante Meals que se declara arriba
-      <div className="itemDiv">{meals}</div>
+      // Se muestra la constante meals que se declara arriba      
+      <div>
+        { showModal && this.getModal(currentMeal) }
+        <div className="itemDiv">{meals}</div>
+      </div>
     );
   }
 }
@@ -129,8 +125,8 @@ class Menu extends Component {
     visibleBreakfast: false,
     visibleDinner: false,
   };
-
   
+
 
   // Filtra los elemntos de la data de acuerdo al prop que se le pase (breakfast o dinner)
   // y te deja la data filtrada para manipularla en MenuList
@@ -173,8 +169,6 @@ class Menu extends Component {
             meals={this.getMealsByType("dinner")}
           />
         ) : null}
-
-        
       </div>
     );
   }

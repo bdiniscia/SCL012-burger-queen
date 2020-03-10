@@ -24,13 +24,12 @@ class Waitress extends Component {
       table: numeroMesa
     });
   }
-
+ 
+  // Actualiza el estado global
   addOrder(item) {
-
     this.setState(previousState => ({
       order: [...previousState.order, item]
     }));
-
     console.log(this.state.order);
   }
 
@@ -41,8 +40,8 @@ class Waitress extends Component {
           <div className="takingOrder">
             <ClientID />
             <div className="menuDiv">
-              <Menu añadirItemAlPedido={this.addOrder.bind(this)} />
-              <Total total={this.state.order}/>
+              <Menu addOrder={this.addOrder.bind(this)} />
+              <Total total={this.state.order} />
             </div>
           </div>
           <div className="orderStatus">
