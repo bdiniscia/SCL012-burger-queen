@@ -45,15 +45,15 @@ class MenuList extends Component {
     //Actualizamos estado de Modal
     this.setState ({
       currentMeal : meal,
-      showModal: true
+      showModal: true, 
     })
-    this.getModal(meal);
+  //  this.getModal(meal);
   };
 
   // Modal de las hamburguesas
   getModal(meal) {
     return (
-      <Modal key={meal.id} show={this.state.showModal} onHide={() => this.hideModal()}>
+      <Modal key={`modal-${meal.id}`} show={this.state.showModal} onHide={() => this.hideModal()}>
       <Modal.Header closeButton>
         <Modal.Title>
           {meal.name}
@@ -65,8 +65,8 @@ class MenuList extends Component {
             <p>Elige el tipo:<span className='asterisk'>*</span></p>
             {meal.options.map(option => {
               return (
-                <label className="container">
-                  <input type="radio" name="RadioOption" value={option.name} />{" "}
+                <label className="container" key={option.id}>
+                  <input type="radio" name="RadioOption" value={option.name} required/>{" "}
                   {option.name}
                 </label>
               )
@@ -78,7 +78,7 @@ class MenuList extends Component {
             {meal.extras.map(extra => {
               return (
                 <label className="container">
-                  <input type="checkbox" value={extra.name}/> {extra.name} ${extra.price}
+                  <input key={extra.id} type="checkbox" value={extra.name}/> {extra.name} ${extra.price}
                 </label>
               )
             })}
@@ -96,7 +96,6 @@ class MenuList extends Component {
     // Mapea y muestra cada uno de los elementos del array escogido (Breakfast o dinner)
     const meals = this.props.meals.map(meal => {
       return (
-        <div>
         <div
           key={meal.id}
           className="itemsMenu"
@@ -104,7 +103,6 @@ class MenuList extends Component {
         >
           <p className="itemName">{meal.name}</p>
           <p className="itemPrice">${meal.price}</p>
-        </div>
         </div>
       );
     });
