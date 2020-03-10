@@ -13,7 +13,9 @@ class MenuList extends Component {
 
     this.state = {      
       showModal: false,
-      currentMeal: null
+      currentMeal: null,
+      option: null,
+      extras: []
     };
   }
 
@@ -22,12 +24,43 @@ class MenuList extends Component {
     this.setState({
       showModal: false,
       currentMeal: null,
+      option: null,
+      extras: []
     });
   };
 
+  onChange = (event) => {
+    const value = event.target.value;
+    this.setState({
+      option: value,
+    });
+  }
+
+  onChange = (event) => {
+    const value = event.target.value;
+    this.setState({
+      option: value,
+    });
+  }
+
+  onChangeCheckbox = (event) => {
+    const value = event.target.name;
+    this.setState(previousState => ({
+      extras: [...previousState.extras, value]
+    }));
+  }
+
   // actualizar el estado del modal
-  addItem(){
-    this.props.addOrder(this.state.currentMeal);
+  addItem = () => {
+    const productModal = {
+      name: this.state.currentMeal.name,
+      price: this.state.currentMeal.price,
+      id: this.state.currentMeal.id,
+      option: this.state.option,
+      extras: this.state.extras
+    }
+
+    this.props.addOrder(productModal);
     this.hideModal();
   }
 
@@ -47,7 +80,6 @@ class MenuList extends Component {
       currentMeal : meal,
       showModal: true, 
     })
-  //  this.getModal(meal);
   };
 
   // Modal de las hamburguesas
@@ -59,9 +91,10 @@ class MenuList extends Component {
           {meal.name}
         </Modal.Title>
       </Modal.Header>
+      <form>
       <Modal.Body>
         <div className="row">
-          <div className="col-6">
+          <div className="col-6" onChange={event => this.onChange(event)}>
             <p>Elige el tipo:<span className='asterisk'>*</span></p>
             {meal.options.map(option => {
               return (
@@ -73,21 +106,23 @@ class MenuList extends Component {
             })}
           </div>
 
-          <div className="col-6">
+          <div className="col-6" onChange={event => this.onChangeCheckbox(event)}>
             <p>Elige extra:</p>
             {meal.extras.map(extra => {
               return (
                 <label className="container">
-                  <input key={extra.id} type="checkbox" value={extra.name}/> {extra.name} ${extra.price}
+                  <input key={extra.id} name={`${extra.name}, ${extra.price}`} type="checkbox"/> {extra.name} ${extra.price}
                 </label>
               )
             })}
           </div>
         </div>
+        
       </Modal.Body>
       <Modal.Footer>
-        <Button title="Agregar" onClick={() => this.addItem()} />
+        <button onClick={() => this.addItem()}>Agregar </button>
       </Modal.Footer>
+      </form>
     </Modal>
     );
   }
