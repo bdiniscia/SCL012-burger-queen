@@ -47,6 +47,7 @@ class MenuList extends Component {
       currentMeal : meal,
       showModal: true
     })
+    this.getModal(meal);
   };
 
   // Modal de las hamburguesas
@@ -85,7 +86,7 @@ class MenuList extends Component {
         </div>
       </Modal.Body>
       <Modal.Footer>
-        <Button title="Agregar" onClick={null} />
+        <Button title="Agregar" onClick={() => this.addItem()} />
       </Modal.Footer>
     </Modal>
     );

@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import '../../App.css';
+import React, { Component } from "react";
+import "../../App.css";
 
 class Total extends Component {
     render() {

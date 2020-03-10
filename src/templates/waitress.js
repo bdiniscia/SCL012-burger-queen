@@ -1,30 +1,30 @@
 import React, { Component } from "react";
-import '../App.css'
+import "../App.css";
 
 import ClientID from "../sections/waitress/clientID";
 import Menu from "../sections/waitress/menu";
 import Total from "../sections/waitress/total";
 import OrderStats from "../sections/waitress/orderStats";
 
-
 class Waitress extends Component {
-
   state = {
-    client: '',
-    table: '',
-    order: [],
-  }
-  
-  actualizarCliente(nombreCliente){
+    client: "",
+    table: "",
+    order: []
+  };
+
+  actualizarCliente(nombreCliente) {
     this.setState({
       client: nombreCliente
     });
   }
+
   actualizarMesa(numeroMesa) {
     this.setState({
       table: numeroMesa
     });
   }
+ 
   // Actualiza el estado global
   addOrder(item) {
     this.setState(previousState => ({
