@@ -8,11 +8,14 @@ class Total extends Component {
     this.props.total.map(e => {
       suma += e.price;
 
-      //   if(e.extras != null){
-      //       e.extras.map(extra => {
-      //         suma += extra.price;
-      //       });
-      //}
+      if (e.extras != null) {
+        e.extras.map(extra => {
+          
+          let idx = extra.indexOf('$');
+          let result = extra.substring(idx + 1, extra.length);
+          suma += parseInt(result)
+        });
+      }
     });
     return suma;
   };
@@ -26,14 +29,18 @@ class Total extends Component {
               return (
                 <div>
                   <div key={item.id} className="itemsMenuTotal">
-                    <p className="itemNameTotal options-p">-{item.name}</p>
+                    <p className="itemNameTotal options-p itemCustom">
+                      -{item.name}
+                    </p>
+
                     <p className="itemNameTotal options-p">${item.price}</p>
+                    <p className="deleteItem">x</p>
                   </div>
 
                   <div className="totalOptions">
-                    <p className="total-options">-{item.option}</p>
+                    <p className="total-options">{item.option}</p>
                     {item.extras.map(extra => {
-                      return <p className="totalExtras">-{extra}</p>;
+                      return <p className="totalExtras">{extra}</p>;
                     })}
                   </div>
                 </div>
@@ -41,8 +48,9 @@ class Total extends Component {
             } else {
               return (
                 <div key={item.id} className="itemsMenuTotal">
-                  <p className="itemNameTotal">-{item.name}</p>
+                  <p className="itemNameTotal itemCustom">-{item.name}</p>
                   <p className="itemNameTotal">${item.price}</p>
+                  <p className="deleteItem">x</p>
                 </div>
               );
             }
