@@ -120,7 +120,7 @@ class MenuList extends Component {
         
       </Modal.Body>
       <Modal.Footer>
-        <Button title="Agregar" onClick={() => this.addItem()} />
+        <Button title="Agregar" onClick={()=>this.addItem()} />
       </Modal.Footer>
       </form>
     </Modal>
