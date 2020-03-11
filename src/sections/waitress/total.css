@@ -1,17 +1,35 @@
+
 .itemsMenuTotal{
 	display: flex;
     justify-content: space-between;
 	padding: 0em 1.75em 0em 1.75em ;
     
 }
-
-.itemNameTotal{
-	font-size: 20px;
-	color: white;
+.totalOptions{
+	display: flex;
+	padding: 0em 4em 0em 4em ;
+	flex-direction: column;
 }
+
 .itemNameTotal{
 	font-size: 18px;
 	color: white;
+	padding-top: 2px;
+}
+.options-p{
+	margin-bottom: 0px;
+}
+	
+.total-options{
+	margin: 0px 0px 0px  !important;
+	font-size: 18px;
+	color: white;
+}
+
+.totalExtras{
+	display: flex;
+	color: white;
+	margin: 0px 0px 0px  !important;
 }
 
 .sumTotal{
