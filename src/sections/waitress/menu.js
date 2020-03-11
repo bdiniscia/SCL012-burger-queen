@@ -111,7 +111,7 @@ class MenuList extends Component {
             {meal.extras.map(extra => {
               return (
                 <label className="container">
-                  <input key={extra.id} name={`${extra.name}, ${extra.price}`} type="checkbox"/> {extra.name} ${extra.price}
+                  <input key={extra.id} name={`${extra.name} $${extra.price}`} type="checkbox"/> {extra.name} ${extra.price}
                 </label>
               )
             })}

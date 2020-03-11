@@ -8,11 +8,11 @@ class Total extends Component {
     this.props.total.map(e => {
       suma += e.price;
 
-    //   if(e.extras != null){
-    //       e.extras.map(extra => {
-    //         suma += extra.price;
-    //       });
-    //}
+      //   if(e.extras != null){
+      //       e.extras.map(extra => {
+      //         suma += extra.price;
+      //       });
+      //}
     });
     return suma;
   };
@@ -22,12 +22,30 @@ class Total extends Component {
       <div className="total">
         <div>
           {this.props.total.map(item => {
-            return (
-              <div key={item.id} className="itemsMenuTotal">
-                <p className="itemNameTotal">-{item.name}</p>
-                <p className="itemNameTotal">${item.price}</p>
-              </div>
-            );
+            if (item.option !== undefined) {
+              return (
+                <div>
+                  <div key={item.id} className="itemsMenuTotal">
+                    <p className="itemNameTotal options-p">-{item.name}</p>
+                    <p className="itemNameTotal options-p">${item.price}</p>
+                  </div>
+
+                  <div className="totalOptions">
+                    <p className="total-options">-{item.option}</p>
+                    {item.extras.map(extra => {
+                      return <p className="totalExtras">-{extra}</p>;
+                    })}
+                  </div>
+                </div>
+              );
+            } else {
+              return (
+                <div key={item.id} className="itemsMenuTotal">
+                  <p className="itemNameTotal">-{item.name}</p>
+                  <p className="itemNameTotal">${item.price}</p>
+                </div>
+              );
+            }
           })}
         </div>
         <div className="sumTotal">
