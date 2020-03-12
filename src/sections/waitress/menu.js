@@ -29,14 +29,14 @@ class MenuList extends Component {
     });
   };
 
-  onChange = (event) => {
+  handleChange = (event) => {
     const value = event.target.value;
     this.setState({
       option: value,
     });
   }
 
-  onChangeCheckbox = (event) => {
+  handleChangeCheckbox = (event) => {
     const value = event.target.name;
     this.setState(previousState => ({
       extras: [...previousState.extras, value]
@@ -90,7 +90,7 @@ class MenuList extends Component {
       </Modal.Header>
       <Modal.Body>
         <div className="row">
-          <div className="col-6" onChange={event => this.onChange(event)}>
+          <div className="col-6" onChange={event => this.handleChange(event)}>
             <p>Elige el tipo:<span className='asterisk'>*</span></p>
             {meal.options.map(option => {
               return (
@@ -102,7 +102,7 @@ class MenuList extends Component {
             })}
           </div>
 
-          <div className="col-6" onChange={event => this.onChangeCheckbox(event)}>
+          <div className="col-6" onChange={event => this.handleChangeCheckbox(event)}>
             <p>Elige extra:</p>
             {meal.extras.map(extra => {
               return (

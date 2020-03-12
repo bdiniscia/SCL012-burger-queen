@@ -59,17 +59,12 @@
 /* Div total derecho */
 .orderStatus {
   width: 30%;
-  height: 768px;
-  background-color: hotpink;
+  height: 45.8em;
+  background-color: #17bebb;
+  border-radius: 10px;
   display: flex;
   justify-content: center;
-}
-
-.orderStats {
-  width: 300px;
-  height: 720px;
-  background-color: lawngreen;
-  margin-top: 1em;
+  margin: 1em;
 }
 
 p {
