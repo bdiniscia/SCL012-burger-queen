@@ -61,6 +61,7 @@ class Waitress extends Component {
       order: this.state.order
     })
     .then((docRef) => {
+      this.resetState();
       console.log(docRef);
     })
     .catch((error) => {
@@ -75,6 +76,7 @@ class Waitress extends Component {
           <div className="takingOrder">
             <ClientID
               inputClient={this.inputClient.bind(this)}
+              client={this.state.client}
               selectTable={this.selectTable.bind(this)}
             />
             <div className="menuDiv">
