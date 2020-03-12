@@ -10,7 +10,7 @@ class clientID extends Component {
         const client = e.target.value
         this.props.inputClient(client)
         console.log(client)  
-        //aqui puede ir un setState
+        
     }
     handleChange = (e) => {
         const table = e.target.value

@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import Welcome from './templates/welcome';
 import Cook from './templates/cook';
 import Waitress from "./templates/waitress";
-import Modal from './components/modal'
+
 
 
 
