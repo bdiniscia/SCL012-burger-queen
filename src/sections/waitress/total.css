@@ -2,13 +2,20 @@
 .itemsMenuTotal{
 	display: flex;
     justify-content: space-between;
-	padding: 0em 1.75em 0em 1.75em ;
+
+	padding: 0em 1em 0em 1em ;
+    font-size: 15px;
     
 }
+.itemCustom{
+	font-weight: 600;
+}
+
 .totalOptions{
 	display: flex;
 	padding: 0em 4em 0em 4em ;
 	flex-direction: column;
+	font-size: 15px;
 }
 
 .itemNameTotal{
@@ -16,14 +23,24 @@
 	color: white;
 	padding-top: 2px;
 }
+.deleteItem{
+	color: white;
+	font-size: 20px;
+}
 .options-p{
 	margin-bottom: 0px;
 }
 	
 .total-options{
 	margin: 0px 0px 0px  !important;
-	font-size: 18px;
 	color: white;
+	padding-top: 2px;
+}
+
+.totalExtras{
+	display: flex;
+	color: white;
+	margin: 0px 0px 0px  !important;
 }
 
 .totalExtras{

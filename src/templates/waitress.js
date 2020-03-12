@@ -33,6 +33,14 @@ class Waitress extends Component {
     }));
     console.log(this.state.order);
   }
+  // Función que elimina el pedido y actualiza el state
+  deleteOrder = (index) => {
+    let currentOrder = [...this.state.order];
+    currentOrder.splice(index, 1);
+    this.setState({
+      order : currentOrder
+    })
+  }
 
   render() {
     return (
@@ -42,7 +50,9 @@ class Waitress extends Component {
             <ClientID />
             <div className="menuDiv">
               <Menu addOrder={this.addOrder.bind(this)} />
-              <Total total={this.state.order} />
+              <Total
+              deleteOrder={this.deleteOrder.bind(this)} 
+              total={this.state.order} />
             </div>
               <div className='buttonSendCook'>
               <Button title='Enviar a cocina'/>
