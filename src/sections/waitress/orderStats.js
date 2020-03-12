@@ -35,13 +35,11 @@ class OrderStats extends Component {
         <h5>Estados de las órdenes</h5>
         {this.state.orders.map((order) => {
           return (
-          <OrderCards 
-            name={order.name}
-            table= {order.table}
-            orderName={order.order[0].name}
-            orderOption={order.order[0].option}
-            orderExtras={order.order[0].extras}
-             />
+            <OrderCards 
+            name= {order.name}
+            table = {order.table}
+            order = {order.order}
+            />
           )
         })} 
       </div>
