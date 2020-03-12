@@ -6,6 +6,7 @@ import Menu from "../sections/waitress/menu";
 import Total from "../sections/waitress/total";
 import OrderStats from "../sections/waitress/orderStats";
 import Button from '../components/button'
+import db from '../config/firebase';
 
 class Waitress extends Component {
   state = {
@@ -13,16 +14,18 @@ class Waitress extends Component {
     table: "",
     order: []
   };
-
-  actualizarCliente(nombreCliente) {
+  //Función que actualiza el estado de Cliente
+  inputClient(clientName) {
+    
     this.setState({
-      client: nombreCliente
+      client: clientName
     });
+   
   }
-
-  actualizarMesa(numeroMesa) {
+// Función que actualiza el estado de la mesa
+  selectTable(tableNumber) {
     this.setState({
-      table: numeroMesa
+      table: tableNumber
     });
   }
  
@@ -33,19 +36,48 @@ class Waitress extends Component {
     }));
     console.log(this.state.order);
   }
+  // Función que elimina el pedido y actualiza el state
+  deleteOrder = (index) => {
+    let currentOrder = [...this.state.order];
+    currentOrder.splice(index, 1);
+    this.setState({
+      order : currentOrder
+    })
+  }
+  //Función que guarda los datos de la colección en firebase
+  saveOrder() {
+    console.log('este es el console ' + this.state.client);
+    console.log('esta es la mesa' + this.state.table);
+    db.collection('orders').add({
+      client: this.state.client,
+      table: this.state.table,
+      order: this.state.order
+    })
+    .then((docRef) => {
+      console.log(docRef);
+    })
+    .catch((error) => {
+      console.log('Error ', error);
+    });
 
+  };
   render() {
     return (
       <div>
         <div className="app">
           <div className="takingOrder">
-            <ClientID />
+            <ClientID inputClient={this.inputClient.bind(this)}
+            selectTable={this.selectTable.bind(this)}/>
             <div className="menuDiv">
               <Menu addOrder={this.addOrder.bind(this)} />
-              <Total total={this.state.order} />
+              <Total
+              deleteOrder={this.deleteOrder.bind(this)} 
+              total={this.state.order} />
             </div>
               <div className='buttonSendCook'>
-              <Button title='Enviar a cocina'/>
+              <Button 
+              onClick={()=>this.saveOrder()}
+               title='Enviar a cocina'/>
               </div>
           </div>
           <div className="orderStatus">
