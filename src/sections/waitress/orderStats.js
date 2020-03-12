@@ -36,7 +36,7 @@ class OrderStats extends Component {
         {this.state.orders.map((order) => {
           return (
             <OrderCards 
-            name= {order.name}
+            name= {order.client}
             table = {order.table}
             order = {order.order}
             />
