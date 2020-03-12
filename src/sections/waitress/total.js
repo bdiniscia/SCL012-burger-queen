@@ -3,6 +3,7 @@ import "../../App.css";
 import "./total.css";
 
 class Total extends Component {
+
   sumTotal = () => {
     let suma = 0;
     this.props.total.map(e => {
@@ -20,11 +21,16 @@ class Total extends Component {
     return suma;
   };
 
+
+  deleteItem = (index) => {
+    this.props.deleteOrder(index)
+  }
+
   render() {
     return (
       <div className="total">
         <div>
-          {this.props.total.map(item => {
+          {this.props.total.map((item, i) => {
             if (item.option !== undefined) {
               return (
                 <div>
@@ -34,7 +40,7 @@ class Total extends Component {
                     </p>
 
                     <p className="itemNameTotal options-p">${item.price}</p>
-                    <p className="deleteItem">x</p>
+                    <p onClick={() => this.deleteItem(i)} className="deleteItem">x</p>
                   </div>
 
                   <div className="totalOptions">
@@ -50,7 +56,7 @@ class Total extends Component {
                 <div key={item.id} className="itemsMenuTotal">
                   <p className="itemNameTotal itemCustom">-{item.name}</p>
                   <p className="itemNameTotal">${item.price}</p>
-                  <p className="deleteItem">x</p>
+                  <p onClick={() => this.deleteItem(i)} className="deleteItem">x</p>
                 </div>
               );
             }
