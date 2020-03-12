@@ -55,7 +55,8 @@ class Waitress extends Component {
               total={this.state.order} />
             </div>
               <div className='buttonSendCook'>
-              <Button title='Enviar a cocina'/>
+              <Button onClick={null} 
+              title='Enviar a cocina'/>
               </div>
           </div>
           <div className="orderStatus">
