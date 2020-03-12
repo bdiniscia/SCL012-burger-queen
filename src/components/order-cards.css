@@ -1,6 +1,5 @@
 .order-cards {
     font-family: 'Roboto';
-    font-weight: bold;
     display: flex;
     flex-direction: column;
     background-color: #f18f01;
@@ -15,9 +14,27 @@
 .identification {
     display: flex;
     justify-content: space-between;
+    font-weight: bold;
+}
+
+.identification p {
+    margin-bottom: 0.5em;
 }
 
 .status {
     display: flex;
     flex-direction: column;
+} 
+ 
+.item {
+    margin-bottom: 0;
+    color: #2a2d34;
+}
+
+.mainItem {
+    font-weight: 500;
+}
+
+.subMenus {
+    margin-left: 1.5em;
 }
