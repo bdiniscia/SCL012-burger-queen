@@ -14,15 +14,17 @@ class Waitress extends Component {
     order: []
   };
 
-  actualizarCliente(nombreCliente) {
+  inputClient(clientName) {
+    console.log('client= ' + this.state.client)
     this.setState({
-      client: nombreCliente
+      client: clientName
     });
+    
   }
 
-  actualizarMesa(numeroMesa) {
+  selectTable(tableNumber) {
     this.setState({
-      table: numeroMesa
+      table: tableNumber
     });
   }
  
@@ -39,7 +41,8 @@ class Waitress extends Component {
       <div>
         <div className="app">
           <div className="takingOrder">
-            <ClientID />
+            <ClientID inputClient={this.inputClient.bind(this)}
+            selectTable={this.selectTable.bind(this)}/>
             <div className="menuDiv">
               <Menu addOrder={this.addOrder.bind(this)} />
               <Total total={this.state.order} />
