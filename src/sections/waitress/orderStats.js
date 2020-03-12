@@ -32,7 +32,7 @@ class OrderStats extends Component {
     
     return (
       <div className='container-orders'>
-        <h5>Estados de las órdenes</h5>
+        <h5 className='title-OrderStats'>Estados de las órdenes:</h5>
         {this.state.orders.map((order) => {
           return (
             <OrderCards 

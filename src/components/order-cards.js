@@ -15,7 +15,7 @@ const OrderCards = ({name, table, order, state, delivered, onClick}) => {
               {order.map((item) => {
                 return (
                 <div>
-                <p className='item mainItem'>{item.name}</p>
+                <p className='item mainItem'>- {item.name}</p>
                 <p className='item subMenus'>{item.option}</p>
                 <p className='item subMenus'>{item.extras}</p>
                 </div>
