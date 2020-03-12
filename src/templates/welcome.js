@@ -17,7 +17,7 @@ class welcome extends Component {
             <h1 className="title-custom">¿Cuál es tu rol?</h1>
             <div>
               <div className='button-welcome'>
-			  <Link to="/waitress">
+			        <Link to="/waitress">
                 <Button  title="Mesonero" />
               </Link>
 			  </div>

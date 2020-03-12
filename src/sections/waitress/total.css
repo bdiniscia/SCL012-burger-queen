@@ -2,7 +2,6 @@
 .itemsMenuTotal{
 	display: flex;
     justify-content: space-between;
-
 	padding: 0em 1em 0em 1em ;
     font-size: 15px;
     
@@ -35,12 +34,6 @@
 	margin: 0px 0px 0px  !important;
 	color: white;
 	padding-top: 2px;
-}
-
-.totalExtras{
-	display: flex;
-	color: white;
-	margin: 0px 0px 0px  !important;
 }
 
 .totalExtras{

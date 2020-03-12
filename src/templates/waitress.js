@@ -16,7 +16,6 @@ class Waitress extends Component {
   };
   //Función que actualiza el estado de Cliente
   inputClient(clientName) {
-    
     this.setState({
       client: clientName
     });
@@ -28,7 +27,7 @@ class Waitress extends Component {
       table: tableNumber
     });
   }
- 
+
   // Actualiza el estado global
   addOrder(item) {
     this.setState(previousState => ({
@@ -37,12 +36,20 @@ class Waitress extends Component {
     console.log(this.state.order);
   }
   // Función que elimina el pedido y actualiza el state
-  deleteOrder = (index) => {
+  deleteOrder = index => {
     let currentOrder = [...this.state.order];
     currentOrder.splice(index, 1);
     this.setState({
-      order : currentOrder
-    })
+      order: currentOrder
+    });
+  };
+
+  resetState() {
+    this.setState({
+      client: "",
+      table: "",
+      order: []
+    });
   }
   //Función que guarda los datos de la colección en firebase
   saveOrder() {
@@ -54,6 +61,7 @@ class Waitress extends Component {
       order: this.state.order
     })
     .then((docRef) => {
+      this.resetState();
       console.log(docRef);
     })
     .catch((error) => {
@@ -66,13 +74,18 @@ class Waitress extends Component {
       <div>
         <div className="app">
           <div className="takingOrder">
-            <ClientID inputClient={this.inputClient.bind(this)}
-            selectTable={this.selectTable.bind(this)}/>
+            <ClientID
+              inputClient={this.inputClient.bind(this)}
+              client={this.state.client}
+              selectTable={this.selectTable.bind(this)}
+            />
             <div className="menuDiv">
               <Menu addOrder={this.addOrder.bind(this)} />
               <Total
-              deleteOrder={this.deleteOrder.bind(this)} 
-              total={this.state.order} />
+                deleteOrder={this.deleteOrder.bind(this)}
+                resetState={this.resetState.bind(this)}
+                total={this.state.order}
+              />
             </div>
               <div className='buttonSendCook'>
               <Button 
