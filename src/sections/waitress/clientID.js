@@ -5,17 +5,18 @@ import backButton from '../../imagenes/backButton.png'
 
 
 class clientID extends Component {
-    //inicializar estado vacío
-    handleChange = (e) => {
+    //Función que toma el valor del input del cliente
+    handleChanges = (e) => {
         const client = e.target.value
         this.props.inputClient(client)
-        console.log(client)  
-        //aqui puede ir un setState
+        
+        
     }
+    //Función que toma el valor del input de la mesa
     handleChange = (e) => {
         const table = e.target.value
         this.props.selectTable(table)
-        console.log(table)
+       
     }
 
 
@@ -32,7 +33,7 @@ class clientID extends Component {
                 <label className='titleClient'>Nombre del Cliente:</label>
                 
                 <input 
-                onChange={(e) => this.handleChange(e)} 
+                onChange={(e) => this.handleChanges(e)} 
                 className='inputClient'
                 type='text'
                 name='client'
