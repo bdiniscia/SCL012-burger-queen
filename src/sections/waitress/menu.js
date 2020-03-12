@@ -36,13 +36,6 @@ class MenuList extends Component {
     });
   }
 
-  onChange = (event) => {
-    const value = event.target.value;
-    this.setState({
-      option: value,
-    });
-  }
-
   onChangeCheckbox = (event) => {
     const value = event.target.name;
     this.setState(previousState => ({
@@ -52,6 +45,10 @@ class MenuList extends Component {
 
   // actualizar el estado del modal
   addItem = () => {
+    if (this.state.option === null) {
+      return alert ('Tienes que escoger una de las opciones obligatorias')
+    }
+
     const productModal = {
       name: this.state.currentMeal.name,
       price: this.state.currentMeal.price,
@@ -91,7 +88,6 @@ class MenuList extends Component {
           {meal.name}
         </Modal.Title>
       </Modal.Header>
-      <form>
       <Modal.Body>
         <div className="row">
           <div className="col-6" onChange={event => this.onChange(event)}>
@@ -122,7 +118,6 @@ class MenuList extends Component {
       <Modal.Footer>
         <Button title="Agregar" onClick={()=>this.addItem()} />
       </Modal.Footer>
-      </form>
     </Modal>
     );
   }
