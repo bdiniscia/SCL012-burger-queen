@@ -40,7 +40,7 @@ class Total extends Component {
                     </p>
 
                     <p className="itemNameTotal options-p">${item.price}</p>
-                    <p onClick={() => this.deleteItem(i)} className="deleteItem">x</p>
+                    <p onClick={() => this.deleteItem(i)} className="deleteItem options-p">x</p>
                   </div>
 
                   <div className="totalOptions">
