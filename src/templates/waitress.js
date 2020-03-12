@@ -58,7 +58,8 @@ class Waitress extends Component {
     db.collection('orders').add({
       client: this.state.client,
       table: this.state.table,
-      order: this.state.order
+      order: this.state.order,
+      time: new Date()
     })
     .then((docRef) => {
       this.resetState();

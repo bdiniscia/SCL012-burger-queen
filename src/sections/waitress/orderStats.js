@@ -16,16 +16,17 @@ class OrderStats extends Component {
   
   componentDidMount() {
     db.collection('orders').onSnapshot((querySnapshot) => {
+        const orders = [];
         querySnapshot.forEach(doc => {
-          console.log(doc.data())
+          console.log(doc.data());
           const dataOrder = doc.data();
-          this.setState(previousState => ({
-            orders: [...previousState.orders, dataOrder],
-          }));
-
+          orders.push(dataOrder);
           console.log("STATE:", this.state)
+        });
 
-        })
+        this.setState({
+              orders,
+        });
     });
   } 
   render () {
@@ -45,6 +46,8 @@ class OrderStats extends Component {
       </div>
     )
   }
+
+
 }
 
 export default OrderStats;
