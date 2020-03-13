@@ -23,8 +23,8 @@ const OrderCards = ({name, table, order, state, delivered, onClick}) => {
               })}
             </div>
             <div className='status'>
-                <p>{state}</p>
-                <p>{delivered}</p>
+                <p>Estado: <span className='preparation'>{state}</span></p>
+                <p>Entregado: <span className='preparation'>{delivered}</span></p>
             </div>
     </div>
     )

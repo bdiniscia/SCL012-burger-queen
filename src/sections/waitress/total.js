@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../App.css";
 import "./total.css";
+import OrderCards from "../../components/order-cards";
 
 class Total extends Component {
 
@@ -29,7 +30,7 @@ class Total extends Component {
   render() {
     return (
       <div className="total">
-        <div>
+        <div className="container-items">
           {this.props.total.map((item, i) => {
             if (item.option !== undefined) {
               return (
@@ -55,8 +56,10 @@ class Total extends Component {
               return (
                 <div key={item.id} className="itemsMenuTotal">
                   <p className="itemNameTotal itemCustom">-{item.name}</p>
-                  <p className="itemNameTotal">${item.price}</p>
-                  <p onClick={() => this.deleteItem(i)} className="deleteItem">x</p>
+                  <div className="price-delete"> 
+                    <p className="itemNameTotal">${item.price}</p>
+                    <p onClick={() => this.deleteItem(i)} className="deleteItem">x</p>
+                  </div>
                 </div>
               );
             }
@@ -64,7 +67,7 @@ class Total extends Component {
         </div>
         <div className="sumTotal">
           <p className="ptotal">TOTAL:</p>
-          <p>{this.sumTotal()}</p>
+          <p>${this.sumTotal()}</p>
         </div>
       </div>
     );

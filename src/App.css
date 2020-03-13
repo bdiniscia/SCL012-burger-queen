@@ -13,7 +13,6 @@
 /* Div total izquierdo */
 .takingOrder {
   width: 70%;
-  /* background-color: yellow; */
   height: 768px;
   display: flex;
   flex-direction: column;
@@ -23,9 +22,9 @@
 .clientID {
   width: 90%;
   height: 5em;
-  /* background-color: blue; */
   margin: 1em;
   display: flex;
+  margin-bottom: 0;
 }
 
 .menuDiv {
@@ -40,6 +39,7 @@
   margin: 1em;
   display: flex;
   flex-direction: column;
+  margin-top: 0;
 }
 
 /* Div del total de la cuenta */
@@ -50,7 +50,7 @@
   margin: 1em;
   display: flex;
   flex-direction: column;
-  margin-top: 5.5em;
+  margin-top: 6.5em;
   border-radius: 10px;
   justify-content: space-between;
   padding-top: 1em;
