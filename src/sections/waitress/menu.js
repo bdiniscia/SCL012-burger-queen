@@ -185,7 +185,7 @@ class Menu extends Component {
       <div className="menu">
         <h5 className="titleMenu">Elige el tipo de menú:</h5>
         <div className="divButtons">
-          <Button title="Desayuno" onClick={_renderBreakfast} />
+          <div className='button-breakfast'><Button title="Desayuno" onClick={_renderBreakfast} /></div>
           <Button title="Almuerzo/Cena" onClick={_renderDinner} />
         </div>
         {this.state.visibleBreakfast ? (
