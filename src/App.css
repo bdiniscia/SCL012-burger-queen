@@ -74,6 +74,7 @@ p {
 .buttonSendCook{
   display: flex;
   align-self: flex-end;
+  margin-right: 1em;
 }
 
 

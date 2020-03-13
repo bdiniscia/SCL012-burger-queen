@@ -3,6 +3,10 @@
     justify-content: flex-start;
 }
 
+.button-breakfast {
+    margin-right: 2em;
+}
+
 
 .itemDiv {
     font-family: 'Roboto';
