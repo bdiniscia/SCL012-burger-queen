@@ -2,11 +2,14 @@
     width: 90%;
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
 }
 
 .title-OrderStats {
     margin: 0.5em 0 0 0;
     color: #fbf5f3;
     font-weight: bold;
+}
+
+.container-cards {
+    overflow-y: scroll;
 }

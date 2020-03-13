@@ -15,8 +15,10 @@ class OrderStats extends Component {
   // const collectionOfOrders = db.collection('orders');
   
   componentDidMount() {
-    db.collection('orders').onSnapshot((querySnapshot) => {
+    const orderedByTime = db.collection('orders').orderBy('time', 'asc');
+    orderedByTime.onSnapshot((querySnapshot) => {
         const orders = [];
+
         querySnapshot.forEach(doc => {
           console.log(doc.data());
           const dataOrder = doc.data();
@@ -34,15 +36,19 @@ class OrderStats extends Component {
     return (
       <div className='container-orders'>
         <h5 className='title-OrderStats'>Estados de las órdenes:</h5>
-        {this.state.orders.map((order) => {
-          return (
-            <OrderCards 
-            name= {order.client}
-            table = {order.table}
-            order = {order.order}
-            />
-          )
-        })} 
+            <div className='container-cards'>
+                {this.state.orders.map((order) => {
+                return (
+                    <OrderCards 
+                    name= {order.client}
+                    table = {order.table}
+                    order = {order.order}
+                    state = {order.cooked}
+                    delivered = {order.delivered}
+                    />
+                )
+                })} 
+            </div>
       </div>
     )
   }
