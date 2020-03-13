@@ -173,6 +173,7 @@ class Menu extends Component {
         visibleDinner: false
       });
     };
+
     const _renderDinner = () => {
       this.setState({
         visibleBreakfast: false,
@@ -182,6 +183,7 @@ class Menu extends Component {
 
     return (
       <div className="menu">
+        <h5 className="titleMenu">Elige el tipo de menú:</h5>
         <div className="divButtons">
           <Button title="Desayuno" onClick={_renderBreakfast} />
           <Button title="Almuerzo/Cena" onClick={_renderDinner} />

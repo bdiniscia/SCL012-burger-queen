@@ -59,7 +59,9 @@ class Waitress extends Component {
       client: this.state.client,
       table: this.state.table,
       order: this.state.order,
-      time: new Date()
+      time: new Date(),
+      cooked: 'PREPARANDO',
+      delivered: 'NO',
     })
     .then((docRef) => {
       this.resetState();
