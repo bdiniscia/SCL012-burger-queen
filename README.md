@@ -1,68 +1,23 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![logo](./src/imagenes/logo.png)
 
-## Available Scripts
+Burger Queen es una aplicación diseñada para simplificar y optimizar el proceso de comunicación entre garzones y cocina así como también recepción y despacho de pedidos.
 
-In the project directory, you can run:
+# Definición del Producto 🍔
 
-### `npm start`
+Esta aplicación está enfocada en usuarios internos del restaurant, específicamente garzones y personal de cocina, la cual les facilitara el proceso de toma de ordenes para una atención más eficaz a sus clientes y para poder llevar un mejor control de los pedidos que están por prepararse y el tiempo de espera.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Objetivos del Usuario 🙋🏼
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- El garzón podrá colocar nombre del cliente y numero de mesa
+- podrá tomar la orden del comensal, editarla, ver totales y una vez lista enviar a cocina.
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Desarrollo del Producto 🚀
 
-### `npm run build`
+Este proyecto fue desarrollado basado en historias de usuario, para la planificación utilizamos la herramienta de proyect de github
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Se realizó prototipo de alta fidelidad el cual podrá ser visualizado en el siguiente link: [Prototipo](https://barbara230946.invisionapp.com/overview/Burger-Queen-ck72ll1tj03wp01b9xcezh80a/screens?v=a%2FNSeGhdPDzSuDOv7hSrHA%3D%3D&linkshare=urlcopied).
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+# Futuras Iteraciones  🚧 
+- En cocina podrán ver pedidos por preparar y marcar como listos para dar aviso al garzón.
+- El garzón podrá marcar los pedidos como entregados para eliminarlos de la aplicación.
