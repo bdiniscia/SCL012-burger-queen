@@ -12,7 +12,7 @@ Esta aplicación está enfocada en usuarios internos del restaurant, específica
 - podrá tomar la orden del comensal, editarla, ver totales y una vez lista enviar a cocina.
 
 
-# Desarrollo del Producto 🚀
+# Desarrollo del Producto 👩‍💻
 
 Este proyecto fue desarrollado basado en historias de usuario, para la planificación utilizamos la herramienta de proyect de github
 
@@ -21,3 +21,7 @@ Se realizó prototipo de alta fidelidad el cual podrá ser visualizado en el sig
 # Futuras Iteraciones  🚧 
 - En cocina podrán ver pedidos por preparar y marcar como listos para dar aviso al garzón.
 - El garzón podrá marcar los pedidos como entregados para eliminarlos de la aplicación.
+
+# DEPLOY 🚀
+
+Puedes entrar al deploy del producto en el siguiente [link](https://burger-queen-f6c33.firebaseapp.com/)

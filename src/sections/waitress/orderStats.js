@@ -23,7 +23,6 @@ class OrderStats extends Component {
           console.log(doc.data());
           const dataOrder = doc.data();
           orders.push(dataOrder);
-          console.log("STATE:", this.state)
         });
 
         this.setState({
