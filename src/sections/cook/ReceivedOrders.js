@@ -19,7 +19,7 @@ class ReceivedOrders extends Component {
     hideModal = () => {
     this.setState({
         showModal: false,
-        currentOrder: {},
+        currentOrder: null,
     });
     };
 
