@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './sectionCook.css'
-import OrderCards from '../../components/order-cards'
 import db from '../../config/firebase';
+import ReadyCards from '../../components/ready-cards'
 
 class ReadyOrders extends Component {
 
@@ -34,11 +34,11 @@ class ReadyOrders extends Component {
     render() {
         return (
             <div className="containersOrders">
-                <h4 className="titleContent">Listas, para retirar:</h4>
+                <h4 className="titleContent">Listos, para retirar:</h4>
                 <div className="orderCardsDiv readyOrders">
                     {this.state.orders.map(order => {
                         return (
-                            <OrderCards
+                            <ReadyCards
                                 name={order.dataOrder.client}
                                 table={order.dataOrder.table}
                                 order={order.dataOrder.order}

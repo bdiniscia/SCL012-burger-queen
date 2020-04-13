@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import '../../App.css';
 import db from '../../config/firebase';
 import OrderCards from '../../components/order-cards'
+import ReadyCards from '../../components/ready-cards'
 import './orderStats.css'
 
 class OrderStats extends Component {
@@ -9,14 +10,15 @@ class OrderStats extends Component {
     super(props);
     this.state = {
       orders: [],
+      ordersReady: [],
     }
   }
 
   // const collectionOfOrders = db.collection('orders');
   
   componentDidMount() {
-    const orderedByTime = db.collection('orders').orderBy('time', 'asc');
-    orderedByTime.onSnapshot((querySnapshot) => {
+    const orderedCooking = db.collection('orders').where('cooked', '==', 'PREPARANDO').orderBy('time', 'asc');
+    orderedCooking.onSnapshot((querySnapshot) => {
         const orders = [];
 
         querySnapshot.forEach(doc => {
@@ -29,6 +31,20 @@ class OrderStats extends Component {
               orders,
         });
     });
+
+    const orderedReady = db.collection('orders').where('cooked', '==', 'LISTO').orderBy('time', 'asc');
+    orderedReady.onSnapshot((querySnapshot) => {
+        const ordersReady = [];
+
+        querySnapshot.forEach(doc => {
+          const dataOrder = doc.data();
+          ordersReady.push(dataOrder);
+        });
+
+        this.setState({
+              ordersReady,
+        });
+    });
   } 
   render () {
     
@@ -36,6 +52,17 @@ class OrderStats extends Component {
       <div className='container-orders'>
         <h5 className='title-OrderStats'>Estados de las órdenes:</h5>
             <div className='container-cards'>
+                {this.state.ordersReady.map((order) => {
+                return (
+                    <ReadyCards 
+                    name= {order.client}
+                    table = {order.table}
+                    order = {order.order}
+                    state = {order.cooked}
+                    delivered = {order.delivered}
+                    />
+                )
+                })} 
                 {this.state.orders.map((order) => {
                 return (
                     <OrderCards 
