@@ -27,7 +27,7 @@ Esta aplicación está enfocada en simplificar la comunicación entre el salón 
 
 # Desarrollo del Producto 👩‍💻
 
-Este proyecto fue desarrollado basado en historias de usuario, para la planificación utilizamos la herramienta de proyect de github
+Este proyecto fue desarrollado basado en historias de usuario, para la planificación utilizamos la herramienta de Projects de GitHub
 
 Se realizó prototipo de alta fidelidad el cual podrá ser visualizado en el siguiente link: [Prototipo](https://barbara230946.invisionapp.com/overview/Burger-Queen-ck72ll1tj03wp01b9xcezh80a/screens?v=a%2FNSeGhdPDzSuDOv7hSrHA%3D%3D&linkshare=urlcopied).
 
@@ -38,4 +38,4 @@ Se realizó prototipo de alta fidelidad el cual podrá ser visualizado en el sig
 
 Puedes entrar al deploy del producto en el siguiente [link](https://burger-queen-f6c33.firebaseapp.com/)
 
-Está diseñado y programado para tablets, en sentido "landscape" (horizontal).
+Importante: Está diseñado y programado para tablets, en sentido "landscape" (horizontal).
