@@ -53,8 +53,15 @@ class Waitress extends Component {
   }
   //Función que guarda los datos de la colección en firebase
   saveOrder() {
-    console.log('este es el console ' + this.state.client);
-    console.log('esta es la mesa' + this.state.table);
+    if (this.state.client == '') {
+      return alert('Por favor, coloque el nombre del cliente');
+    }
+    if (this.state.table == '') {
+      return alert('Por favor, coloque el número de mesa');
+    }
+    if (this.state.order == '') {
+      return alert('Por favor, agrega items a la orden');
+    }
     db.collection('orders').add({
       client: this.state.client,
       table: this.state.table,
